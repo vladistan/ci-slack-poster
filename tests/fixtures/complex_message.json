@@ -1,0 +1,64 @@
+{
+	"text" : "Complex slack message to test...",
+	"displayname": "GO.CD",
+	"icon_emoji": ":older_woman:",
+	"channel": "gocd-pipelines",
+	"blocks": [
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "Hey <@UGN3D0L8H> New base windows image for {{USER}} is ready for inspection:\n*<http://www.google.com|Build log>*"
+			}
+		},
+		{
+			"type": "section",
+			"fields": [
+				{
+					"type": "mrkdwn",
+					"text": "*Type:*\nWindows"
+				},
+				{
+					"type": "mrkdwn",
+					"text": "*AMI:*\nami-34abc994"
+				},
+				{
+					"type": "mrkdwn",
+					"text": "*Bld:*\nMar 10, 2019"
+				},
+				{
+					"type": "mrkdwn",
+					"text": "*Name:*\nBase"
+				},
+				{
+					"type": "mrkdwn",
+					"text": "*Specs:*\n\"Std Specs\""
+				}
+			]
+		},
+		{
+			"type": "actions",
+			"elements": [
+				{
+					"type": "button",
+					"text": {
+						"type": "plain_text",
+						"emoji": true,
+						"text": "Approve/Deny"
+					},
+					"url": "https://travis-ci.org/webpack/webpack-cli/jobs/614770582",
+					"style": "primary"
+				},
+				{
+					"type": "button",
+					"text": {
+						"type": "plain_text",
+						"emoji": true,
+						"text": "AWS Console"
+					},
+					"style": "danger"
+				}
+			]
+		}
+	]
+}

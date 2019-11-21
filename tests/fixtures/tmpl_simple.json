@@ -1,0 +1,10 @@
+{
+  "Hello": "{{USER}}",
+  "Hi": "{{USER_W}}",
+  "Hola": "{{USER_E}}",
+  "OS": {
+    "Path" : "{{PATH}}",
+    "User" : "{{USER}}",
+    "Term" : "{{TERM}}"
+  }
+}

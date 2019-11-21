@@ -1,3 +1,4 @@
+import os
 from jinja2 import Environment
 
 
@@ -13,3 +14,12 @@ class Renderer(object):
     def render(self, inp):
         t = self.env.from_string(inp)
         return t.render(self.vars)
+
+    def parse_file(self, path):
+        with open(path, 'r') as tmpl:
+            text = tmpl.read()
+            t = self.env.from_string(text)
+            return t.render(self.vars)
+
+    def use_os_env(self):
+        self.vars = os.environ

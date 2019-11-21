@@ -1,17 +1,12 @@
 import json
-import os
-import requests
 
-hook_url = os.environ['HOOK_URL']
+from notifier.render import Renderer
+from notifier.slack import post_message
+from tests.util import fixture_path
 
 
-def test_post_simple():
-    payload = {
-        'text': 'Hello',
-        'channel': 'gocd-pipelines',
-        'icon_emoji': ':crying_cat_face:',
-        'displayname': 'test',
-    }
-    r = requests.post(hook_url, data=json.dumps(payload))
-    assert r.status_code == 200
-
+def test_render_and_post():
+    rnd = Renderer()
+    rnd.use_os_env()
+    text = rnd.parse_file(fixture_path('complex_message.json'))
+    assert post_message(text)
